@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;600&display=swap');
+/* colors */
+
+:root {
+    --desatured-red: hsl(0, 36%, 70%);
+    --soft-red: hsl(0, 93%, 68%);
+    --dark-grayish-red: hsl(0, 6%, 24%);
+    --gradient-color: to right,  hsl(0, 0%, 100%), hsl(0, 80%, 86%);
+
+}
+
+* {
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    min-height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-image: url(../images/bg-pattern-desktop.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: left left;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-areas: 'header img'
+                        'content img';
+                        
+}
+
+main header {
+    grid-area: header;
+    padding: 50px 150px;
+    width: 100%;
+}
+
+.main-content {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 150px;
+    grid-area: content;
+}
+
+.content .hgroup h1 {
+    font-size: 60px;
+    color: var(--desatured-red);
+    font-weight: 300;
+    width: 200px;
+}
+
+.content .hgroup h2 {
+    font-weight: 600;
+    font-size: 60px;
+    width: 380px;
+    color: var(--dark-grayish-red);
+}
+
+.content p {
+    margin-top: 20px;
+    color: var(--desatured-red);
+    width: 450px;
+    line-height: 24px;
+    font-weight: 600;
+}
+
+footer form {
+    margin-top: 30px;
+}
+
+footer form span {
+    display: flex;
+    align-items: center;
+    width: 450px;
+}
+
+#email-input {
+    width: 380px;
+    position: relative;
+    height: 50px;
+    outline: 0;
+    border-radius: 30px;
+    border: none;
+    border: 2px solid var(--desatured-red);
+}
+
+
+
+#email-input::placeholder {
+    color: var(--desatured-red);
+    font-weight: 600;
+}
+
+#btn {
+    background: linear-gradient(to right, hsl(0, 80%, 86%) ,hsl(0, 74%, 74%));
+    width: 100px;
+    height: 50px;
+    border: none;
+    border-radius: 30px;
+    position: absolute;
+    margin-left: 320px;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.3);
+    transition: .4 ease-in;
+    outline: 0;
+}
+
+#btn:active {
+    background: linear-gradient(to right,hsl(0, 74%, 74%),  hsl(0, 80%, 86%));
+}
+
+#btn:hover {
+    cursor: pointer;
+}
+
+.error-icon {
+    position: absolute;
+    margin-left: 280px;
+    display: none;
+}
+
+#spanHiden {
+    color: var(--soft-red);
+    margin-top: 5px;
+    font-weight: 600;
+    display: none;
+}
+
+
+aside {
+    grid-area: img;
+    width: 100%;
+    height: 100vh;
+}
+aside img {
+    grid-area: img;
+    height: 100%;
+    width: 100%;
+}
+
+@media (max-width: 1200px) {
+
+    body {
+        overflow: auto;
+    }
+    main {
+        grid-template-areas: 'header'
+                            'img'
+                            'content';
+    
+                            background-position: left bottom;
+                            background-size: 100%;
+    }
+
+    aside {
+        width: 100%;
+        height: 100%;
+    }
+    aside img {
+        width: 100%;
+        height: auto;
+    }
+
+    .main-content {
+        margin: 0 auto;
+        width: 100%;
+        text-align: center;
+        height: 100vh;
+        justify-content: center;
+    }
+
+    .content {
+        width: 100%;
+        height: 100%;
+    }
+
+    .content .hgroup h1, .content .hgroup h2,
+    .content p {
+        margin: 0 auto;
+    } 
+
+    .main-content .hgroup h1{
+        width: 405px;
+    }
+    .main-content .hgroup h2 {
+        width: 405px;
+    }
+
+    footer {
+        
+        display: flex;
+        justify-content: center;
+
+    }
+
+}
+
+@media (max-width: 550px) {
+    main header{
+       display: flex;
+       justify-content: center;
+    }
+
+    .main-content {
+        height: 100vh;
+        width: 100%;
+
+    }
+
+    .content p {
+        margin-top: 15px;
+        font-size: 1.3rem;
+    }
+
+    #btn, #email-input {
+        height: 70px;
+        margin-bottom: 20px;
+    }
+    #btn::placeholder {
+        font-size: 1.25rem;
+    }
+
+
+}
+
+
